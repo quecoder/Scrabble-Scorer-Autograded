@@ -163,8 +163,6 @@ return newPointStructure;
 };
 
 function runProgram() {
-   
-
    scorerPrompt(userWord)
 }
 
