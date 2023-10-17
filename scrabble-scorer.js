@@ -35,7 +35,7 @@ function initialPrompt() {
    return firstQuestion;
 };
 
-let userWord = initialPrompt();
+
 "-----------------------------------------------------------------------------------"
 
 let newPointStructure = {
@@ -131,18 +131,18 @@ const scoringAlgorithms = [{
 ];
 
 
-function scorerPrompt() {
+function scorerPrompt(word) {
    let scorePrompt = input.question(`Choose Scoring Method\nType "0" for Simple Score\nType "1" for Bonus Vowels\nType "2" for Scrabble Score\nSelect one: `)
-   
+   word = word.toLowerCase()
 
    if (scorePrompt === '0') {
-      console.log(`algorithm name: ${scoringAlgorithms[0].name}\nscoringFuntion result: ${scoringAlgorithms[0].scorerFunction(userWord)}`);
+      console.log(`algorithm name: ${scoringAlgorithms[0].name}\nscoringFuntion result: ${scoringAlgorithms[0].scorerFunction(word)}`);
       
    } else if (scorePrompt === '1') {
-     console.log(`algorithm name: ${scoringAlgorithms[1].name}\nscoringFuntion result: ${scoringAlgorithms[1].scorerFunction(userWord)}`);
+     console.log(`algorithm name: ${scoringAlgorithms[1].name}\nscoringFuntion result: ${scoringAlgorithms[1].scorerFunction(word)}`);
    
    } else if (scorePrompt === '2') {
-      console.log(`algorithm name: ${scoringAlgorithms[2].name}\nscoringFuntion result: ${scoringAlgorithms[2].scorerFunction(userWord)}`);
+      console.log(`algorithm name: ${scoringAlgorithms[2].name}\nscoringFuntion result: ${scoringAlgorithms[2].scorerFunction(word)}`);
       
    } else {
       console.log("Not a valid number, try again.");
@@ -163,7 +163,7 @@ return newPointStructure;
 
 "-----------------------------------------------------------------------------------"
 function runProgram() {
-   
+   let userWord = initialPrompt();
    scorerPrompt(userWord);
 
 }
