@@ -2,6 +2,7 @@
 
 const input = require("readline-sync");
 
+"-----------------------------------------------------------------------------------"
 const oldPointStructure = {
    1: ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T'],
    2: ['D', 'G'],
@@ -12,9 +13,6 @@ const oldPointStructure = {
    10: ['Q', 'Z']
 };
 
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////
 function oldScrabbleScorer(word) {
    let letterPoints = "";
    word = word.toUpperCase();
@@ -28,7 +26,7 @@ function oldScrabbleScorer(word) {
    }
    return letterPoints;
 }
-//////////////////////////////////////////////////////////////////////////////////////////////
+"-----------------------------------------------------------------------------------"
 // your job is to finish writing these functions and variables that we've named //
 // don't change the names or your program won't work as expected. //
 
@@ -38,6 +36,7 @@ function initialPrompt() {
 };
 
 let userWord = initialPrompt();
+"-----------------------------------------------------------------------------------"
 
 let newPointStructure = {
    a: 1,
@@ -68,6 +67,7 @@ let newPointStructure = {
    z: 10
 };
 
+"-----------------------------------------------------------------------------------"
 
 function simpleScorer (word) {
    word = word.toUpperCase();
@@ -77,7 +77,6 @@ function simpleScorer (word) {
 
    return score;
 };
-
 
 function vowelBonusScorer (word) {
    word = word.toUpperCase();
@@ -96,7 +95,7 @@ function vowelBonusScorer (word) {
 
    }
    return score;
-}
+};
 
 function scrabbleScorer (word) {
    word = word.toLowerCase();
@@ -110,7 +109,7 @@ function scrabbleScorer (word) {
    return score;
 }; 
    
-
+"-----------------------------------------------------------------------------------"
 const scoringAlgorithms = [{
       
    name: 'Simple Score',
@@ -150,7 +149,7 @@ function scorerPrompt() {
    }
    
 };
-
+"-----------------------------------------------------------------------------------"
 function transform(oldPointStructure) {
 for (let points in oldPointStructure) {
    let score = Number(points);
@@ -162,8 +161,11 @@ for (let points in oldPointStructure) {
 return newPointStructure;
 };
 
+"-----------------------------------------------------------------------------------"
 function runProgram() {
-   scorerPrompt(userWord)
+   
+   scorerPrompt(userWord);
+
 }
 
 // Don't write any code below this line //
